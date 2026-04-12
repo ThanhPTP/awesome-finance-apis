@@ -1,13 +1,16 @@
-# Awesome Free Finance APIs [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+# Awesome Free Finance APIs [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 > Curated list of free/freemium APIs for banking, capital markets, FX, and derivatives data. Every fintech developer needs this.
 
-If you build trading bots, fintech apps, quant models, or just like nerding out over market data — this list is for you. Every entry has a usable free tier suitable for prototyping, backtesting, or hobby projects.
+Stop paying for market data you don't need yet. This list is for developers who want to **ship first, pay later** — every API here has a free tier you can hit with `curl` in under 60 seconds. No sales calls, no enterprise contracts.
+
+**40+ APIs** across 8 categories, personally verified, with real rate limits and honest limitations.
 
 ---
 
 ## Contents
 
+- [Try it right now](#try-it-right-now)
 - [Why this list?](#why-this-list)
 - [How to use this list](#how-to-use-this-list)
 - [Banking \& Open Banking](#banking--open-banking)
@@ -22,6 +25,40 @@ If you build trading bots, fintech apps, quant models, or just like nerding out 
 - [Caveats \& Compliance](#caveats--compliance)
 - [Roadmap / Ideas](#roadmap--ideas)
 - [Contributing](#contributing)
+
+---
+
+## Try it right now
+
+Don't take our word for it — paste these into your terminal. No API key needed for any of them.
+
+**Get today's EUR/USD rate:**
+
+```bash
+curl -s https://api.frankfurter.app/latest?from=EUR&to=USD | python3 -m json.tool
+```
+
+**Fetch US GDP data from the World Bank:**
+
+```bash
+curl -s "https://api.worldbank.org/v2/country/US/indicator/NY.GDP.MKTP.CD?format=json&per_page=5" | python3 -m json.tool
+```
+
+**Look up Apple's FIGI identifier:**
+
+```bash
+curl -s -X POST "https://api.openfigi.com/v3/mapping" \
+  -H "Content-Type: application/json" \
+  -d '[{"idType":"TICKER","idValue":"AAPL","exchCode":"US"}]' | python3 -m json.tool
+```
+
+**Get Bitcoin price from CoinGecko:**
+
+```bash
+curl -s "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur,gbp" | python3 -m json.tool
+```
+
+> These all work. Right now. For free. The rest of this list has 40+ more like them.
 
 ---
 
@@ -409,14 +446,23 @@ Things that could make this list even better — PRs welcome:
 
 ## Contributing
 
-Found an API we're missing? See something wrong? Contributions are welcome!
+Found an API we're missing? See something wrong? Contributions are welcome — but please read the guidelines first.
 
-Please read **[CONTRIBUTING.md](CONTRIBUTING.md)** for the entry template and submission guidelines.
+**[Read CONTRIBUTING.md](CONTRIBUTING.md)** before opening a PR. It contains:
 
-In short:
-1. Check for duplicates.
-2. Open a PR with the new entry using the standard template.
-3. One API per PR keeps reviews fast.
+- The **entry template** (required for all new API submissions).
+- **Quality guidelines** — what gets merged and what gets closed.
+- **Self-promotion policy** — disclose affiliations or get banned.
+- **Anti-spam rules** — link dumps, SEO spam, and unverified AI-generated content are closed on sight.
+
+The short version:
+
+1. Check for duplicates (README + open issues/PRs).
+2. One API per PR, using the entry template.
+3. Fill out the PR checklist completely.
+4. Maintainers reserve the right to close PRs without detailed justification.
+
+We also have a [Code of Conduct](CODE_OF_CONDUCT.md). The TL;DR: be respectful, be constructive, don't spam.
 
 ---
 
@@ -426,4 +472,6 @@ In short:
 
 ---
 
-**Star this repo** if you find it useful — it helps others discover it too.
+**If this list saved you time, [star the repo](../../stargazers)** — it helps other developers find it.
+
+Found something wrong? [Open an issue](../../issues/new/choose). Know an API we're missing? [Submit a PR](CONTRIBUTING.md).

@@ -1,0 +1,103 @@
+name: Suggest a new API
+description: Propose a free/freemium financial API to add to the list.
+title: "[New API] "
+labels: ["new-api"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an API! Please fill out this form completely.
+        Incomplete submissions will be closed without review.
+
+  - type: input
+    id: api_name
+    attributes:
+      label: API name
+      placeholder: e.g., Alpha Vantage
+    validations:
+      required: true
+
+  - type: input
+    id: api_url
+    attributes:
+      label: Documentation or homepage URL
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Banking & Open Banking
+        - Equities & ETFs
+        - Fixed Income & Credit
+        - FX (Foreign Exchange)
+        - Cryptocurrency
+        - Derivatives & Options
+        - Macro & Economic Data
+        - Alternative & Sentiment Data
+        - Market Infrastructure & Reference Data
+        - Other / New category needed
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: One-sentence description
+      description: What does this API provide? Keep it factual — no marketing language.
+      placeholder: Provides real-time and historical equity prices for US markets.
+    validations:
+      required: true
+
+  - type: textarea
+    id: free_tier
+    attributes:
+      label: Free / freemium tier details
+      description: What do you get without paying? Include rate limits, data scope, and any restrictions.
+      placeholder: "e.g., 500 requests/day, end-of-day data only, US equities"
+    validations:
+      required: true
+
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Notable limitations
+      description: Anything a developer should know before signing up.
+      placeholder: "e.g., delayed quotes only, non-commercial license, no WebSocket"
+    validations:
+      required: true
+
+  - type: textarea
+    id: best_for
+    attributes:
+      label: Best for
+      description: Who benefits most from this API?
+      placeholder: "e.g., hobby algo traders doing daily equity backtesting"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: I have verified that this API currently has a usable free or freemium tier.
+          required: true
+        - label: I have checked that this API is not already listed in the README or in an open issue/PR.
+          required: true
+        - label: I have read [CONTRIBUTING.md](https://github.com/rahul-ai-studio/awesome-finance-apis/blob/main/CONTRIBUTING.md).
+          required: true
+
+  - type: checkboxes
+    id: affiliation
+    attributes:
+      label: Affiliation disclosure
+      description: Be honest — undisclosed self-promotion will result in a ban.
+      options:
+        - label: I am NOT affiliated with this API (not an employee, founder, contractor, or investor).
+          required: false
+        - label: I AM affiliated and I'm disclosing it here.
+          required: false

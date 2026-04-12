@@ -1,0 +1,41 @@
+name: Report an issue
+description: Report a broken link, inaccurate information, or a defunct API.
+title: "[Fix] "
+labels: ["fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us keep this list accurate. Use this form to report broken links,
+        incorrect descriptions, APIs that have removed their free tier, or other factual errors.
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: What's wrong?
+      options:
+        - Broken or dead link
+        - API has removed its free tier
+        - API has shut down or is no longer maintained
+        - Inaccurate description or free-tier details
+        - Wrong category
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: api_name
+    attributes:
+      label: Which API?
+      placeholder: e.g., Alpha Vantage
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Explain what's wrong and, if possible, what the correct information should be. Include links to evidence.
+      placeholder: "The free tier was reduced from 500 to 25 requests/day as of March 2026. Source: https://..."
+    validations:
+      required: true
