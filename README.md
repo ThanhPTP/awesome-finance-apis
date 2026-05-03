@@ -214,11 +214,11 @@ APIs for foreign exchange rates, currency conversion, and cryptocurrency market 
   - **Best for:** Lightweight currency conversion for SaaS applications.
   - **Free tier:** 300 requests/month.
   - **Limitations:** Low free-tier volume. Some historical endpoints require paid access.
- 
-- [**RealMarketAPI**](https://realmarketapi.com/docs/) — Access real-time gold, forex, crypto, and stock market data with ultra-low latency and simple REST endpoints.
-  - **Best for:** Built for Modern Financial Products.
-  - **Free tier:** 5000 req/month.
-  - **Limitations:** Only 50 instruments. Historical data requires a paid plan.
+
+- [**RealMarketAPI**](https://realmarketapi.com/docs/) — REST API for market data across gold, forex, crypto, and stocks.
+  - **Best for:** Applications that need basic spot quotes across multiple asset classes from one API and can work within the 60-instrument free-tier limit.
+  - **Free tier:** 5,000 requests/month.
+  - **Limitations:** Only 60 instruments exists. Historical data requires a paid plan.
 
 ### Cryptocurrency
 
